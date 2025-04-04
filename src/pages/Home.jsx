@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import MediaGrid from '../components/MediaGrid';
+import MovieList from '../components/MovieList';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -34,6 +35,14 @@ const Home = () => {
   const handleMediaClick = (item) => {
     navigate(`/watch/${item.media_type}/${item.id}`);
   };
+
+  const Home = () => {
+  return (
+    <div className="home-page">
+      <MovieList />
+    </div>
+  );
+};
 
   return (
     <div className="home-page">
