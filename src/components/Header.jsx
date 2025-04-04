@@ -1,33 +1,35 @@
-import React from 'react';
-import { FiFilm, FiTv, FiSearch } from 'react-icons/fi';
-import '../styles/Header.css';
-
 const Header = ({ mediaType, setMediaType, searchTerm, setSearchTerm }) => {
   return (
     <header className="header">
       <div className="header-content">
         <h1 className="logo">StreamFlix</h1>
         
-        <nav className="nav-container">
+        <div className="type-tabs">
           <button
-            className={`nav-btn ${mediaType === 'movie' ? 'active' : ''}`}
+            className={`type-tab ${mediaType === 'all' ? 'active' : ''}`}
+            onClick={() => setMediaType('all')}
+          >
+            All
+          </button>
+          <button
+            className={`type-tab ${mediaType === 'movie' ? 'active' : ''}`}
             onClick={() => setMediaType('movie')}
           >
-            <FiFilm className="nav-icon" /> Movies
+            Movies
           </button>
           <button
-            className={`nav-btn ${mediaType === 'tv' ? 'active' : ''}`}
+            className={`type-tab ${mediaType === 'tv' ? 'active' : ''}`}
             onClick={() => setMediaType('tv')}
           >
-            <FiTv className="nav-icon" /> TV Shows
+            TV Shows
           </button>
-        </nav>
+        </div>
 
-        <div className="search-bar">
-          <FiSearch className="search-icon" />
+        <div className="search-container">
           <input
             type="text"
-            placeholder="Search titles..."
+            className="search-input"
+            placeholder="Search movies and TV shows..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -36,5 +38,3 @@ const Header = ({ mediaType, setMediaType, searchTerm, setSearchTerm }) => {
     </header>
   );
 };
-
-export default Header;
