@@ -1,60 +1,86 @@
-/* Home Page Specific Styles */
-.movie-list {
-  margin-top: 80px;
+/* Improved Search Bar */
+.search-container {
+  position: relative;
+  margin-left: 2rem;
+  flex-grow: 1;
+  max-width: 600px;
 }
 
-.movie-section {
-  margin-bottom: 3rem;
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 20px;
+  font-size: 1rem;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
-.section-title {
-  color: var(--light);
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding-left: 1rem;
-  border-left: 4px solid var(--primary);
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(0,0,0,0.9);
 }
 
-.movie-grid {
+/* Media Type Tabs */
+.type-tabs {
+  display: flex;
+  gap: 1rem;
+  margin: 0 2rem;
+}
+
+.type-tab {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.type-tab.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* Media Grid Improvements */
+.media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1.5rem;
-  padding: 0 2rem;
+  padding: 100px 2rem 2rem;
 }
 
-.movie-card {
-  background: #2a2a2a;
+.media-card {
+  position: relative;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  aspect-ratio: 2/3;
 }
 
-.movie-card:hover {
-  transform: scale(1.05);
+.media-card:hover {
+  transform: scale(1.08);
+  z-index: 2;
 }
 
-.movie-poster {
+.media-poster {
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
-  border-bottom: 3px solid var(--primary);
+  background: linear-gradient(to bottom, #1a1a1a 0%, #2a2a2a 100%);
 }
 
-.movie-info {
-  padding: 1rem;
-}
-
-.movie-title {
-  font-size: 1rem;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.movie-year {
-  color: var(--gray);
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+.media-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--primary);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
