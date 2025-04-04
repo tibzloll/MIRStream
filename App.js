@@ -8,7 +8,7 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-  const TMDB_API_KEY = '1caf3d8d76372de72d054a395eba76';
+  const TMDB_API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
   // Fetch trending movies
   useEffect(() => {
