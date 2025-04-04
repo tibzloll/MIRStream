@@ -1,0 +1,26 @@
+.home-page {
+  background-color: #141414;
+  min-height: 100vh;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 120px 4rem 4rem;
+}
+
+.search-container {
+  position: relative;
+  margin-left: auto;
+}
+
+.search-container input {
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 300px;
+}
