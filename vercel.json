@@ -1,18 +1,5 @@
 {
-  "build": {
-    "env": {
-      "NODE_OPTIONS": "--max_old_space_size=4096"
-    }
-  },
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ]
